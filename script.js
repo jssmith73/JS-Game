@@ -73,3 +73,33 @@ function setWins() {
     win.textContent = winCounter;
     localStorage.setItem("winCount")
 }
+
+function setLosses () {
+    lose.textContent = loseCounter;
+    localStorage.setItem("lostCount", lossCounter);
+}
+function getWins () {
+    var storedWins = localStorage.getItem("winCount");
+    if (storedWins === null) {
+        winCounter = 0;
+    } else {
+        winCounter = storedWins;
+    }
+    win.textContent = winCounter;
+}
+
+function getlosses() {
+    var storedLosses = localStorage.getItem("loseCount");
+    if (storedLosses === null) {
+        lostCounter = 0;
+    } else {
+        loseCounter = storedLosses;
+    }
+    lose.textContent = loseCounter;
+}
+
+function checkWin () {
+    if (chosenWord === blankLetters.join("")) {
+        isWin = true;
+    }
+}
